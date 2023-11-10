@@ -1,0 +1,28 @@
+{
+  "cities": [
+    {
+      "cityName": "Albarracin",
+      "country": "Spain",
+      "emoji": "ES",
+      "date": "2023-09-24T15:56:40.530Z",
+      "notes": "",
+      "position": {
+        "lat": "40.230399970328065",
+        "lng": "-1.5827340430695005"
+      },
+      "id": 4
+    },
+    {
+      "cityName": "Sedano",
+      "country": "Spain",
+      "emoji": "ES",
+      "date": "2023-09-24T15:56:44.906Z",
+      "notes": "",
+      "position": {
+        "lat": "42.53782873165975",
+        "lng": "-4.109730070433389"
+      },
+      "id": 5
+    }
+  ]
+}
