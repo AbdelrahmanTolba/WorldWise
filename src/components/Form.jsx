@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
+import { useCities } from "../contexts/CitiesContext";
+import { useNavigate } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
 
 import Button from "./Button";
@@ -10,8 +12,6 @@ import Message from "./Message";
 import styles from "./Form.module.css";
 import BackButton from "./BackButton";
 import useUrlPosition from "../hooks/useUrlPosition";
-import { useCities } from "../contexts/CitiesContext";
-import { useNavigate } from "react-router-dom";
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -66,11 +66,12 @@ function Form() {
   );
   async function handleSubmit(e) {
     e.preventDefault();
+    let currDate = date.toISOString();
     const newCity = {
       cityName,
       country,
       emoji,
-      date,
+      date: currDate,
       notes,
       position: { lat, lng },
     };
@@ -100,11 +101,11 @@ function Form() {
 
       <div className={styles.row}>
         <label htmlFor="date">When did you go to {cityName}?</label>
-        {/* <input
+        <input
           id="date"
           onChange={(e) => setDate(e.target.value)}
           value={date}
-        /> */}
+        />
 
         <DatePicker
           id="date"
