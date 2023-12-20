@@ -19,9 +19,9 @@ function reducer(state, action) {
   }
 }
 const FAKE_USER = {
-  name: "Jack",
-  email: "jack@example.com",
-  password: "qwerty",
+  name: "Guest",
+  email: "A@example.com",
+  password: "A@example.com",
   avatar: "https://i.pravatar.cc/100?u=zz",
 };
 function AuthProvider({ children }) {
@@ -30,6 +30,7 @@ function AuthProvider({ children }) {
   function login(email, password) {
     if (email === FAKE_USER.email && password === FAKE_USER.password)
       dispatch({ type: "login", payload: FAKE_USER });
+    else window.location.replace("/");
   }
 
   function logout() {
